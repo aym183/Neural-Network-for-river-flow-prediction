@@ -136,8 +136,6 @@ class Neural_Network(object):
         return np.average((target - output) ** 2)
         
         
-    
-
     def train(self, inputs, targets, val_inputs, val_outputs, test_inputs, test_outputs, epochs, learning_rate):
         """ Function that trains the algorithm """
         
@@ -250,8 +248,10 @@ if __name__ == "__main__":
     items2 = np.array((val_input_list))
     targets2 =  np.array((val_output_list))
     
+    # validation data
     input = np.array((test_input_list))
     target = np.array((test_output_list))
+    
     # training parameters (7 inputs, 1 output and 7 neurons in one hidden layer)
     mlp = Neural_Network(7, 1, [7])
     mlp.train(items, targets, items2, targets2, input, target, 750, 0.7)
